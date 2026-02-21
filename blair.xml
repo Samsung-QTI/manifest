@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="blair" fetch="git@github.com:Samsung-QTI" sync-c="true" sync-tags="false" revision="lineage-23.0"/>
+  
+<!-- DEVICE -->
+  <project name="android_device_qcom_common" path="device/qcom/common" remote="blair" revision="lineage-23.2-testing"> <!-- QCOM/COMMON -->
+    <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
+  </project>
+
+<!-- HARDWARE -->
+  <project name="android_hardware_qcom_display" path="hardware/qcom/display" remote="blair" revision="lineage-23.0"> <!-- DISPLAY -->
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/display-techpack.mk" src="config/display-techpack.mk"/>
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/display-product.mk" src="config/display-product.mk"/>
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/display-board.mk" src="config/display-board.mk"/>
+  </project>
+  
+  <remove-project name="LineageOS/android_hardware_qcom_wlan" /> <!-- WLAN -->
+  <project name="android_hardware_qcom_wlan" path="hardware/qcom/wlan" remote="blair" revision="lineage-23.2"/>  
+  <project name="android_vendor_qcom_wlan" path="device/qcom/wlan" remote="blair" revision="lineage-23.0"/> 
+  <remove-project name="LineageOS/android_device_qcom_sepolicy_vndr" /> <!-- SEPOLICY -->
+  <project name="android_device_qcom_sepolicy_vndr" path="device/qcom/sepolicy_vndr" remote="blair" /> 
+  
+<!-- VENDOR/QCOM/OPENSOURCE -->
+  <project name="android_vendor_qcom_opensource_agm" path="vendor/qcom/opensource/agm" remote="blair" revision="lineage-23.2"/> <!-- Audio Graph Manager -->
+  <project name="android_vendor_qcom_opensource_audioreach-graphservices" path="vendor/qcom/opensource/audio/graphservices" remote="blair" revision="lineage-23.2"/> <!-- Graphservices -->
+  <project name="android_vendor_qcom_opensource_audio-ar" path="vendor/qcom/opensource/audio-hal/primary-hal" remote="blair" revision="lineage-23.0" > <!-- Audio-HAL -->
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/audio-vendor-product.mk" src="configs/audio_vendor_product.mk"/>
+  </project>
+  <project name="android_vendor_qcom_opensource_arpal-lx" path="vendor/qcom/opensource/pal" remote="blair" /> <!-- PAL -->
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_usb" />
+  <project name="android_vendor_qcom_opensource_usb" path="vendor/qcom/opensource/usb" remote="blair" revision="lineage-23.2"> <!-- USB -->
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/usb-product.mk" src="vendor_product.mk"/>
+  </project>
+  <project name="android_vendor_qcom_opensource_lights" path="vendor/qcom/opensource/lights" remote="blair" revision="master"> <!-- LIGHTS -->
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/lights-vendor-product.mk" src="lights-vendor-product.mk"/>
+  </project>
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_healthd-ext" />
+  <project name="android_vendor_qcom_opensource_healthd-ext" path="vendor/qcom/opensource/healthd-ext" remote="blair" revision="master"> <!-- HEALTHD -->
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/health-vendor-product.mk" src="health-vendor-product.mk"/>
+  </project>
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_power" />
+  <project name="android_vendor_qcom_opensource_power" path="vendor/qcom/opensource/power" remote="blair" revision="lineage-23.2"> <!-- POWER -->
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/power-vendor-product.mk" src="power-vendor-product.mk"/>
+    <linkfile dest="vendor/qcom/defs/board-defs/vendor/power-vendor-board.mk" src="power-vendor-board.mk"/>
+  </project>
+  <project name="android_hardware_qcom_thermal" path="vendor/qcom/opensource/thermal-hal" remote="blair" revision="lineage-23.2"/> <!-- THERMAL -->
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_vibrator" />
+  <project name="android_vendor_qcom_opensource_vibrator" path="vendor/qcom/opensource/vibrator" remote="blair" revision="master"> <!-- VIBRATOR -->
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/vibrator-vendor-product.mk" src="vibrator-vendor-product.mk"/>
+  </project>
+  <project name="android_vendor_qcom_opensource_mmc-utils" path="vendor/qcom/opensource/mmc-utils" remote="blair" revision="master"> <!-- MMC-UTILS -->
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/mmc-utils-product.mk" src="vendor_product.mk"/>
+  </project>
+  <project name="android_vendor_qcom_opensource_time-services" path="vendor/qcom/opensource/time-services" remote="blair" revision="lineage-23.2"/> <!-- TIME -->
+<!-- VENDOR/QCOM/OPENSOURCE -->
+</manifest>
