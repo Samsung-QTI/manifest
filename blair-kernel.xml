@@ -94,6 +94,9 @@
     <linkfile dest="vendor/qcom/defs/product-defs/vendor/video_kernel_product.mk" src="video_kernel_product.mk"/>
   </project>
 
+  <!-- synx-kernel -->
+  <project name="vendor_qcom_opensource_synx-kernel" path="vendor/qcom/opensource/synx-kernel" remote="blair-kernel">
+  
   <!-- WLAN -->
   <project name="vendor_qcom_opensource_wlan_fw-api" path="vendor/qcom/opensource/wlan/fw-api" remote="blair-kernel"/>
   <project name="vendor_qcom_opensource_wlan_platform" path="vendor/qcom/opensource/wlan/platform" remote="blair-kernel"/>
